@@ -1,4 +1,4 @@
-function test_random_dense_QCQP_on_ball()
+function test_random_dense_QCQP_on_ball(data)
 
 
 function test(n::Int64)
@@ -17,7 +17,7 @@ function test(n::Int64)
     println("Number of equality constraints: l_h=",l)
     println("====================")
 
-    include("../examples/densePOPsphere_deg2_var$(n)_nineq$(m)_neq$(l).jl")
+    include(data*"/densePOPsphere_deg2_var$(n)_nineq$(m)_neq$(l).jl")
 
     x,f,g,h=SpectralPOP.get_POP(n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f);
 

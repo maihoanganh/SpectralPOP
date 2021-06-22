@@ -1,10 +1,12 @@
-function Norm_Subgrad()
+function Norm_Subgrad(data)
 
 println("***POP with single inequality (ball) constraint***")
 
 n=10
+m=1
+l=ceil(Int32, n/4)
     
-l=ceil(Int32, n/4)+1
+
 
 
 println("Number of variable: n=",n)
@@ -17,7 +19,7 @@ println("Number of equality constraints: l_h=",l)
 println("====================")
 
 
-include("../examples/densePOPsphere_deg2_var$(n)_nineq1_neq$(l).jl")
+include(data*"/densePOPsphere_deg2_var$(n)_nineq1_neq$(l).jl")
 
 x,f,g,h=SpectralPOP.get_POP(n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f);
 
@@ -55,7 +57,7 @@ println("Number of equality constraints: l_h=",l)
 println("====================")
 
 
-include("../examples/densePOPsphere_deg2_var$(n)_nineq$(m)_neq$(l).jl")
+include(data*"/densePOPsphere_deg2_var$(n)_nineq$(m)_neq$(l).jl")
 
 x,f,g,h=SpectralPOP.get_POP(n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f);
 

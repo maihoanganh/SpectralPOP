@@ -1,4 +1,4 @@
-function Evaluation_comparisons()
+function Evaluation_comparisons(data)
 
 
 
@@ -20,7 +20,7 @@ function test(n::Int64)
     println("====================")
     
     
-    include("../examples/densePOPsphere_deg2_var$(n)_nineq0_neq$(l).jl")
+    include(data*"/densePOPsphere_deg2_var$(n)_nineq0_neq$(l).jl")
 
     x,f,g,h=SpectralPOP.get_POP(n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f);
 

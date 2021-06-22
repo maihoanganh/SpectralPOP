@@ -1,4 +1,4 @@
-function test_random_dense_quadratic_on_sphere()
+function test_random_dense_quadratic_on_sphere(data)
 
 
 function test(n::Int64)
@@ -16,7 +16,8 @@ function test(n::Int64)
     println("Number of equality constraints: l_h=",1)
     println("====================")
 
-    include("./Desktop/math-topics/SpectralPOP/codes/SpectralPOP/examples/densePOPsphere_deg2_var$(n)_nineq0_neq1.jl")
+
+    include(data*"/densePOPsphere_deg2_var$(n)_nineq0_neq1.jl")
 
     x,f,g,h=SpectralPOP.get_POP(n,m,l,lmon_g,supp_g,coe_g,lmon_h,supp_h,coe_h,lmon_f,supp_f,coe_f);
     
