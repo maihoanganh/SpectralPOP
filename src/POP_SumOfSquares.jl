@@ -14,7 +14,7 @@ function SumofSquares_POP(x::Vector{PolyVar{true}},f::Polynomial{true},g::Vector
     s2k_h=[@inbounds binomial(2*(k-ceil(Int64,maxdegree(h[i])/2))+n,n) for i in 1:l_h]
 
 
-    model = SOSModel(with_optimizer(Mosek.Optimizer, QUIET=true))
+    model = SOSModel(optimizer_with_attributes(Mosek.Optimizer, MOI.Silent() => true))
     @variable(model, lambda)
     @objective(model, Max, lambda)
 
@@ -63,7 +63,7 @@ function SumofSquares_POP_WithExtraction(x::Vector{PolyVar{true}},f::Polynomial{
     s2k_h=[@inbounds binomial(2*(k-ceil(Int64,maxdegree(h[i])/2))+n,n) for i in 1:l_h]
 
 
-    model = SOSModel(with_optimizer(Mosek.Optimizer, QUIET=true))
+    model = SOSModel(optimizer_with_attributes(Mosek.Optimizer, MOI.Silent() => true))
     @variable(model, lambda)
     @objective(model, Max, lambda)
 
