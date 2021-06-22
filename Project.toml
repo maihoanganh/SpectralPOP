@@ -1,0 +1,19 @@
+name = "SpectralPOP"
+uuid = "415c37b2-6a0e-4863-82df-769ee4ae9c47"
+authors = ["Ngoc Hoang Anh Mai <maihoanganh6@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Arpack = "7d9fca2a-8960-54d3-9f78-7d1dccf2cb97"
+Compat = "34da2185-b29b-5c13-b0c7-acf172513d20"
+DynamicPolynomials = "7c1d4256-1411-5781-91ec-d7bc3513ac07"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+MosekTools = "1ec41992-ff65-5c91-ac43-2df89e9693a4"
+OSQP = "ab2f91bb-94b4-55e3-9ba0-7f65df51de79"
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+RowEchelon = "af85af4c-bcd5-5d23-b03a-a909639aa875"
+SemialgebraicSets = "8e049039-38e8-557d-ae3a-bc521ccf6204"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+SumOfSquares = "4b9e565b-77fc-50a5-a571-1244f986bda1"
