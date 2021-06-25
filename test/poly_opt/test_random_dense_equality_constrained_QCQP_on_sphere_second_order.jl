@@ -27,7 +27,7 @@ function test_test_random_dense_equality_constrained_QCQP_on_sphere_second_order
     println()
 
 
-    if n<=30
+    if n<30
         g=Vector{Polynomial{true,Float64}}([])
 
         opt_val = SpectralPOP.SumofSquares_POP2(x,f,g,h,k) # SumOfSquares.jl + Mosek
