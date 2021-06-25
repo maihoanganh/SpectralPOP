@@ -1,11 +1,7 @@
 # SpectralPOP
 - SpectralPOP is a Julia package of solving equality constrained polynomial optimization problems (POPs) on an Euclidean sphere:
 
-**inf_x { f(x) : x in R^n, hj(x) = 0, j = 1,...,l } with h1 := R - |x|^2,**
-
-as well as extensive application in squared systems of polynomial equations solving:
-
-**pj(x) = 0, j=1,...,n.**
+**inf_x { f(x) : x in R^n, hj(x) = 0, j = 1,...,l } with h1 := R - |x|^2.**
 
 - The main idea of SpectralPOP is to solve an SDP (moment) relaxation of the form:
 
@@ -82,25 +78,7 @@ To solve other types of POPs, see the links below:
 - [Constrained POPs with single inequality (ball) constraint](https://github.com/maihoanganh/SpectralPOP/blob/master/examples/test_random_dense_QCQP_unique_inequality_(ball)_constraint.ipynb);
 - [Constrained POPs on a ball](https://github.com/maihoanganh/SpectralPOP/blob/master/examples/test_random_dense_QCQP_on_ball.ipynb).
 
-## Squared systems of polynomial equations
 
-```ruby
-using DynamicPolynomials
-
-@polyvar x[1:2] # variables
-
-# mickey equations
-h=[x[1]^2 + 4*x[2]^2 - 4;
-        2*x[2]^2 - x[1]]
-
-L=10 # squared radius of a ball centered at origin containing at least one real root
-k=1 # relaxed order
-
-using SpectralPOP
-
-# get a real root
-root = ASC_PolySys(x,h,k,L,method="LMBM",EigAlg="Arpack",tol=1e-5)
-```
 
 # References
 For more details, please refer to:
@@ -111,15 +89,17 @@ The following commands allow one to reproduce the paper's benchmarks:
 ```ruby
 using SpectralPOP
 
+data="/home/hoanganh/Desktop/math-topics/SpectralPOP/codes/dataPOP" # path of data
+
 # Polynomial optimization
-SpectralPOP.test_random_dense_quadratic_on_sphere() # Table 2
-SpectralPOP.test_random_dense_equality_constrained_QCQP_on_sphere_first_order() # Table 3
-SpectralPOP.test_random_dense_equality_constrained_QCQP_on_sphere_second_order() # Table 4 and 5
-SpectralPOP.Evaluation_comparisons() # Table 6
-SpectralPOP.test_random_dense_QCQP_unique_inequality_ball_constraint() # Table 7
-SpectralPOP.test_random_dense_QCQP_on_ball() # Table 8
-SpectralPOP.Norm_Subgrad() # Table 9
-SpectralPOP.test_random_dense_quartics_on_sphere() # Table 10
+SpectralPOP.test_random_dense_quadratic_on_sphere(data) # Table 2
+SpectralPOP.test_random_dense_equality_constrained_QCQP_on_sphere_first_order(data) # Table 3
+SpectralPOP.test_random_dense_equality_constrained_QCQP_on_sphere_second_order(data) # Table 4 and 5
+SpectralPOP.Evaluation_comparisons(data) # Table 6
+SpectralPOP.test_random_dense_QCQP_unique_inequality_ball_constraint(data) # Table 7
+SpectralPOP.test_random_dense_QCQP_on_ball(data) # Table 8
+SpectralPOP.Norm_Subgrad(data) # Table 9
+SpectralPOP.test_random_dense_quartics_on_sphere(data) # Table 10
 ```
 
 # SpectralPOP
