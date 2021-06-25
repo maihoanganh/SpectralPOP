@@ -1,8 +1,4 @@
-function test_random_dense_equality_constrained_QCQP_on_sphere_first_order(data)
-
-
-
-function test(n::Int64)
+function test_test_random_dense_equality_constrained_QCQP_on_sphere_first_order(n::Int64,data)
 
 
     println("***Problem setting***")
@@ -61,9 +57,12 @@ function test(n::Int64)
 end
 
 
+function test_random_dense_equality_constrained_QCQP_on_sphere_first_order(data)
+
+
 N=[50;60;70;80;100;120;150;200;300;400]
 
 for n in N
-    test(n)
+    test_test_random_dense_equality_constrained_QCQP_on_sphere_first_order(n,data)
 end
 end

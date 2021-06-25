@@ -1,9 +1,4 @@
-function Evaluation_comparisons(data)
-
-
-
-
-function test(n::Int64)
+function test_Evaluation_comparisons(n::Int64,data)
 
 
     println("***Problem setting***")
@@ -53,9 +48,12 @@ function test(n::Int64)
 end
 
 
+function Evaluation_comparisons(data)
+
+
 N=[5;10;15;20;25]
 
 for n in N
-    test(n)
+    test_Evaluation_comparisons(n,data)
 end
 end

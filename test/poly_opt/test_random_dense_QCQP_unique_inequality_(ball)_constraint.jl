@@ -1,6 +1,4 @@
-function test_random_dense_QCQP_unique_inequality_ball_constraint(data)
-
-function test(n::Int64)
+function test_test_random_dense_QCQP_unique_inequality_ball_constraint(n::Int64,data)
 
     println("***Problem setting***")
 
@@ -56,9 +54,12 @@ function test(n::Int64)
 end
 
 
+function test_random_dense_QCQP_unique_inequality_ball_constraint(data)
+
+
 N=[5;10;15;20;25;30;35;40;45;50]
 
 for n in N
-    test(n)
+    test_test_random_dense_QCQP_unique_inequality_ball_constraint(n,data)
 end
 end

@@ -1,7 +1,4 @@
-function test_random_dense_QCQP_on_ball(data)
-
-
-function test(n::Int64)
+function test_test_random_dense_QCQP_on_ball(n::Int64,data)
 
     println("***Problem setting***")
 
@@ -57,10 +54,12 @@ function test(n::Int64)
 
 end
 
+function test_random_dense_QCQP_on_ball(data)
+
 
 N=[10;15;20;25;30;35]
 
 for n in N
-    test(n)
+    test_test_random_dense_QCQP_on_ball(n,data)
 end
 end
