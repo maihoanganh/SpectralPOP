@@ -89,6 +89,8 @@ The following commands allow one to reproduce the paper's benchmarks:
 ```ruby
 using SpectralPOP
 
+SpectralPOP.test_examples()
+
 data="/home/hoanganh/Desktop/math-topics/SpectralPOP/codes/dataPOP" # path of data
 
 # Polynomial optimization
