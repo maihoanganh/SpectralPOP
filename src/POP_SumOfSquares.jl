@@ -78,7 +78,7 @@ function SumofSquares_POP2(x::Vector{PolyVar{true}},f::Polynomial{true},g::Vecto
     
     for i in 1:l_g
         sigma[i]= @variable(model,[1:1], SOSPoly(psi_monos[1:sk_g[i]]))
-        wsos-=sigma[i][1]*g[i]
+        wsos-=psi_monos[1:sk_g[i]]'*sigma[i][1]*psi_monos[1:sk_g[i]]*g[i]
     end
 
 
