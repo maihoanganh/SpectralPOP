@@ -37,7 +37,7 @@ function save_data(x,f,g,h,R)
     
     d=maximum([sum(supp_f[:,i]) for i in 1:lmon_f])
     
-    output_file = open("densePOPsphere_deg$(d)_var$(n)_nineq$(m)_neq$(l).jl","w")
+    output_file = open("/home/hoanganh/Desktop/math-topics/SpectralPOP/codes/dataPOP/densePOPsphere_deg$(d)_var$(n)_nineq$(m)_neq$(l).jl","w")
     
     write(output_file, "n = ")
     show(output_file, n)

@@ -29,7 +29,7 @@ function SumofSquares_POP(x::Vector{PolyVar{true}},f::Polynomial{true},g::Vector
     sigma=Vector{SumOfSquares.GramMatrix{JuMP.VariableRef,MultivariateBases.MonomialBasis{DynamicPolynomials.Monomial{true},Array{DynamicPolynomials.Monomial{true},1}},JuMP.GenericAffExpr{Float64,JuMP.VariableRef}}}(undef,l_g)
     for i in 1:l_g
         sigma[i]= @variable(model,[1:1], SOSPoly(psi_monos[1:sk_g[i]]))
-        wsos-=sigma[i][1]*g[i]
+        wsos-=sigma[i][1][1]*g[i]
     end
      psi=Vector{Array{DynamicPolynomials.Polynomial{true,JuMP.VariableRef},1}}(undef,l_h)
 
@@ -127,7 +127,7 @@ function SumofSquares_POP_WithExtraction(x::Vector{PolyVar{true}},f::Polynomial{
     
     for i in 1:l_g
         sigma[i]= @variable(model,[1:1], SOSPoly(psi_monos[1:sk_g[i]]))
-        wsos-=sigma[i][1]*g[i]
+        wsos-=sigma[i][1][1]*g[i]
     end
 
 

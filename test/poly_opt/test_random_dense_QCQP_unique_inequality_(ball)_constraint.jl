@@ -42,8 +42,11 @@ function test_test_random_dense_QCQP_unique_inequality_ball_constraint(n::Int64,
         println()
         println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         println()
-
-        opt_val,opt_sol = SpectralPOP.BTP_POP(x,f,g,h,k,R)
+        try
+            opt_val,opt_sol = SpectralPOP.BTP_POP(x,f,g,h,k,R)
+        catch
+            println("Error with BTP_POP")
+        end
     end
     println()
     println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
