@@ -124,4 +124,6 @@ and two problems are separated by three lines:
 ```~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
 ```~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~```
 
-# SpectralPOP
+# Exploiting CTP for POP with ball, box, annulus and simplex
+
+Visit [ctpPOP](https://github.com/maihoanganh/ctpPOP).
